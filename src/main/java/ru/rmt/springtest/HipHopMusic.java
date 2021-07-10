@@ -1,9 +1,9 @@
 package ru.rmt.springtest;
 
-public class RockMusic implements Music {
+public class HipHopMusic implements Music {
 
     @Override
     public String getSongs() {
-        return "Some rock music";
+        return "Not afraid";
     }
 }

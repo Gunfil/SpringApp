@@ -1,18 +1,14 @@
 package ru.rmt.springtest;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class ClassicalMusic implements Music{
-
-    private ClassicalMusic() {}
-
-    public static ClassicalMusic getClassicalMusic() {
-        return new ClassicalMusic();
-    }
 
     public void doMyInit() {
         System.out.println("My initialization");
@@ -23,11 +19,7 @@ public class ClassicalMusic implements Music{
     }
 
     @Override
-    public List<String> getSongs() {
-        List<String> songs = new ArrayList<>();
-        songs.add("Classical Music 1");
-        songs.add("Classical Music 2");
-        songs.add("Classical Music 3");
-        return songs;
+    public String getSongs() {
+        return "Hungarian Rhapsody";
     }
 }
